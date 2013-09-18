@@ -1,0 +1,16 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {903E6D04-EA93-4F8F-8601-DCFDC184895E} = s 'TwitterWordBreaker Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Both'
+			}
+			TypeLib = s '{B630B9A2-BE59-40EA-B26A-0B75FE4B2163}'
+			Version = s '1.0'
+		}
+	}
+}

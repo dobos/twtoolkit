@@ -1,0 +1,16 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {60397962-8F0F-446C-81CE-998A73413B39} = s 'TwitterFilter Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Both'
+			}
+			TypeLib = s '{B630B9A2-BE59-40EA-B26A-0B75FE4B2163}'
+			Version = s '1.0'
+		}
+	}
+}

@@ -1,0 +1,16 @@
+HKCR
+{
+	NoRemove CLSID
+	{
+		ForceRemove {7B995B88-7A64-4E95-B985-DE517C717D3A} = s 'TwitterStemmer Class'
+		{
+			ForceRemove Programmable
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Both'
+			}
+			TypeLib = s '{B630B9A2-BE59-40EA-B26A-0B75FE4B2163}'
+			Version = s '1.0'
+		}
+	}
+}

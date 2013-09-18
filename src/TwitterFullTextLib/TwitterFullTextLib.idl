@@ -1,0 +1,74 @@
+// TwitterFullTextLib.idl : IDL source for TwitterFullTextLib
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (TwitterFullTextLib.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "filter.idl";
+import "propsys.idl";
+#include "indexserv.h";
+
+[
+	object,
+	uuid(50020E05-9231-4B79-8C75-DAEF6064A9D9),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ITwitterWordBreaker : IDispatch{
+};
+
+[
+	object,
+	uuid(43FF105D-2E61-4161-A7DB-AD084058313E),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ITwitterStemmer : IDispatch{
+};
+
+
+[
+	object,
+	uuid(A04A44DD-079A-462B-A75F-03129D6A5996),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ITwitterFilter : IDispatch{
+};
+
+
+[uuid(B630B9A2-BE59-40EA-B26A-0B75FE4B2163), version(1.0)]
+library TwitterFullTextLib
+{
+	importlib("stdole2.tlb");
+
+	[uuid(C9A48231-51C4-439B-AFF3-C4BE123EEB86)]
+	coclass TwitterWordBreaker
+	{
+		[default] interface ITwitterWordBreaker;
+		interface IWordBreaker;
+	};
+
+	[uuid(07CB0BC6-A4C4-4E92-BE56-579F333F6CB3)]
+	coclass TwitterStemmer
+	{
+		[default] interface ITwitterStemmer;
+		interface IStemmer;
+	};
+
+	[uuid(64BB8B78-12F3-42DE-8BCF-229C24DDB3E0)]		// This is the class id GUID to use in registry
+	coclass TwitterFilter
+	{
+		[default] interface ITwitterFilter;
+		interface IFilter;
+		interface IPersistFile;
+		interface IPersistStream;
+	};
+	// {5B9EA538-CB95-4FCB-8AD9-E04533F83155}				// This is the persistent handle guid
+};
+
