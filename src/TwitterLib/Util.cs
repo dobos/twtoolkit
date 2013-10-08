@@ -68,7 +68,9 @@ namespace TwitterLib
 
                 var date = new DateTime(year, month, day, hour, min, sec);
 
-                result = date.ToUniversalTime();
+                // 2013-10-07: Removed
+                // result = date.ToUniversalTime();
+                result = date;
 
                 return true;
             }
