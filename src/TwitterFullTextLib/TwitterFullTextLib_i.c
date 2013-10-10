@@ -6,7 +6,7 @@
 
 
  /* File created by MIDL compiler version 7.00.0555 */
-/* at Wed Sep 18 21:07:06 2013
+/* at Thu Oct 10 17:51:43 2013
  */
 /* Compiler settings for TwitterFullTextLib.idl:
     Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 

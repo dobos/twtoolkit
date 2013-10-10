@@ -142,7 +142,7 @@
       <SubSystem>Windows</SubSystem>
       <ModuleDefinitionFile>.\TwitterFullTextLib.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <RegisterOutput>true</RegisterOutput>
+      <RegisterOutput>false</RegisterOutput>
     </Link>
     <PostBuildEvent>
       <Command>copy $(OutDir)TwitterFullTextLib.dll ($SolutionDir)bin\($Configuration)</Command>
