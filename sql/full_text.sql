@@ -1,3 +1,8 @@
+exec sp_fulltext_service 'load_os_resources', 1
+exec sp_fulltext_service 'verify_signature', 0     -- to load unsigned dll's
+
+GO
+
 CREATE UNIQUE NONCLUSTERED INDEX [IX_tweet_unique_id] ON [dbo].[tweet]
 (
 	[unique_id] ASC
