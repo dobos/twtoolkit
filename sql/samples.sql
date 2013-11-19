@@ -43,7 +43,7 @@ DECLARE @binsize float = 0.01
 
 SELECT FLOOR(lon / @binsize) * @binsize, FLOOR(lat / @binsize) * @binsize, COUNT(*)
 FROM tweet
-WHERE ...
+WHERE lon BETWEEN -75 AND -73 AND lat BETWEEN 40 AND 42
 GROUP BY FLOOR(lon / @binsize) * @binsize, FLOOR(lat / @binsize) * @binsize
 HAVING COUNT(*) > 1000
 
