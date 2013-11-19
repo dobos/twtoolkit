@@ -43,7 +43,7 @@ DECLARE @binsize float = 0.01
 
 SELECT FLOOR(lon / @binsize) * @binsize, FLOOR(lat / @binsize) * @binsize, COUNT(*)
 FROM tweet
-WHERE ...
+WHERE lon BETWEEN -75 AND -73 AND lat BETWEEN 40 AND 42
 GROUP BY FLOOR(lon / @binsize) * @binsize, FLOOR(lat / @binsize) * @binsize
 HAVING COUNT(*) > 1000
 
@@ -71,3 +71,18 @@ ORDER BY 1
 
 SELECT TOP 1000 * FROM sys.dm_fts_index_keywords(DB_ID('twitter_1'),OBJECT_ID('tweet'))
 ORDER BY document_count DESC
+
+
+----------------------------------------------------
+-- Gráf fokszámeloszlása
+
+WITH degree_dist AS
+(
+	SELECT user_id, COUNT(*) AS deg
+	FROM tweet_user_mention WHERE run_id = 1004
+	GROUP BY user_id
+)
+SELECT deg, COUNT(*)
+FROM degree_dist
+GROUP BY deg
+ORDER BY deg
