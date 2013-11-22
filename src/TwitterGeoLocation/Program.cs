@@ -47,22 +47,5 @@ Department of Physics of Complex Systems, Eötvös Loránd University
 
 ");
         }
-
-
-#if false
-        static void Main(string[] args)
-        {
-            Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
-            Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo("en-US");
-            Console.WriteLine("Press a key to start.");
-            Console.ReadKey();
-            Console.WriteLine("Started.");
-            GeoCalculator gc = new GeoCalculator();
-            gc.Start();
-            Console.WriteLine("All Finished");
-            Console.ReadKey();
-
-        }
-#endif
     }
 }
