@@ -93,12 +93,17 @@ ORDER BY t.run_id, t.user_id";
             var wtask = Task.Factory.StartNew(TaskWriter);
             //-----
 
-            using (var cn = new SqlConnection(GetConnectionString()))
+            var cstr = GetConnectionString();
+            Console.WriteLine("Connecting to: {0}", cstr);
+
+            using (var cn = new SqlConnection(cstr))
             {
                 cn.Open();
+                Console.WriteLine("Connection open.");
 
                 using (var cmd = new SqlCommand(sql, cn))
                 {
+                    cmd.CommandTimeout = 3600;
                     cmd.Parameters.Add("@run_id", SqlDbType.SmallInt).Value = RunId;
 
                     using (var dr = cmd.ExecuteReader())
