@@ -56,12 +56,8 @@ namespace Elte.GeoVisualizer.Lib
             
             graphics = Graphics.FromImage(bitmap);
             graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            //graphics.Clear(Color.Blue);
 
-            graphics.Transform = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, context.Height);
-
-            //graphics.Clear(Color.FromArgb(0xFF, Color.White));
-            
+            graphics.Transform = new System.Drawing.Drawing2D.Matrix(1, 0, 0, -1, 0, context.Height);            
         }
 
         public abstract void OnRender(RenderingContext context, object[] values);
