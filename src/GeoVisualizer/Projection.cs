@@ -173,7 +173,7 @@ namespace Elte.GeoVisualizer.Lib
             return tmp;
         }
 
-        public GeoPoint[] Interpolate(GeoPoint gstart, GeoPoint gend, int numpoints)
+        public MapPoint[] Interpolate(GeoPoint gstart, GeoPoint gend, int numpoints)
         {
             // Must be a power of two
             numpoints = (int)Math.Sqrt(numpoints - 1);
@@ -187,7 +187,13 @@ namespace Elte.GeoVisualizer.Lib
 
             CalculateMidpoints(gpoints, 0, numpoints - 1);
 
-            return gpoints;
+            var mpoints = new MapPoint[numpoints];
+            for (int i = 0; i < gpoints.Length; i++)
+            {
+                mpoints[i] = Map(gpoints[i]);
+            }
+
+            return mpoints;
         }
 
         private void CalculateMidpoints(GeoPoint[] points, int a, int b)
