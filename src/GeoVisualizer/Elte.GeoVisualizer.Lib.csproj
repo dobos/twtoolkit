@@ -58,6 +58,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Layers\Bitmap.cs" />
+    <Compile Include="Layers\Graph.cs" />
     <Compile Include="Layers\Grid.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -13,7 +13,7 @@ namespace Elte.GeoVisualizer.Lib
 {
     class Program
     {
-        const string cstr = "Data Source=RETDB02;Initial Catalog=Gadm;Integrated Security=true;Type System Version=SQL Server 2012;";
+        const string cstr = "Data Source=future1;Initial Catalog=Gadm;Integrated Security=true;Type System Version=SQL Server 2012;";
 
         static void Main(string[] args)
         {
@@ -26,8 +26,10 @@ namespace Elte.GeoVisualizer.Lib
             var map = new Map();
             map.Projection = new Projections.Stereographic()
             {
-                MapScale = new MapPoint(3000, 3000),     // USA
-                GeoOrigin = new GeoPoint(-96, 40),       // USA
+                //MapScale = new MapPoint(3000, 3000),     // USA
+                //GeoOrigin = new GeoPoint(-96, 40),       // USA
+                MapScale = new MapPoint(500, 500),
+                GeoOrigin = new GeoPoint(0, 0),
                 MapMin = new MapPoint(0, 0),
                 MapMax = new MapPoint(1280, 1280),
                 MapOffset = new MapPoint(640, 640),
@@ -35,23 +37,23 @@ namespace Elte.GeoVisualizer.Lib
 
             // Create a solid color background layer
             var bg = new Layers.Background();
-            bg.Color = Color.FromArgb(255, 21, 23, 62);
+            bg.Color = Color.Black;
             bg.DataSource = DataSource.Null;
 
             // Create a geography layer that takes the maps from SQL
-            sql = "SELECT geom.Reduce(10) FROM Gadm..Region WHERE GeoLevel = 1 AND ISO = 'USA'";
+            sql = "SELECT geom.Reduce(1000) FROM Gadm..Region WHERE AdmLevel = 0 -- AND ISO = 'USA'";
             var geo = new Layers.Geography();
-            geo.FillStyle.Method = FillStyle.FillMethod.Constant;
-            geo.FillStyle.Constant = new SolidBrush(Color.Black);
-            geo.LineStyle.Method = LineStyle.DrawMethod.Empty;
-            geo.LineStyle.Constant = Pens.LightGray;
+            geo.FillStyle.Method = FillStyle.FillMethod.Empty;
+            geo.FillStyle.Constant = new SolidBrush(Color.FromArgb(255, 21, 23, 62));
+            geo.LineStyle.Method = LineStyle.DrawMethod.Constant;
+            geo.LineStyle.Constant = new Pen(Color.FromArgb(255, 21, 23, 62));
             geo.DataSource = new DataSources.SqlQuery()
                 {
                     ConnectionString = cstr,
                     Command = new SqlCommand(sql)
                 };
 
-
+#if false
             // Create a histogram layer that takes point distribution from SQL
             sql = @"select t.lon, t.lat
 from [jszule].[dbo].[user_location] as t
@@ -82,10 +84,23 @@ and t.lat > 34.5 and t.lat < 35.8 and t.is_day=0
             grid.DataSource = DataSource.Null;
             grid.LineStyle.Method = LineStyle.DrawMethod.Constant;
             grid.LineStyle.Constant = new Pen(Color.FromArgb(128, Color.Black));
+#endif
+
+            // Create a graph layer
+            sql = @"select TOP 1000000 c_lon, c_lat, f_lon, f_lat, dist from jszule.dbo.follower_2dir_coord";
+            var graph = new Layers.Graph();
+            graph.LineStyle.Method = LineStyle.DrawMethod.Constant;
+            graph.LineStyle.Constant = new Pen(Color.FromArgb(1, 255, 0, 0));
+            graph.DataSource = new DataSources.SqlQuery()
+            {
+                ConnectionString = cstr,
+                Command = new SqlCommand(sql),
+            };
 
             // Add layers to the map, from bottom to up
-            map.Layers.Add(grid);
-            map.Layers.Add(hist);
+            map.Layers.Add(graph);
+            //map.Layers.Add(grid);
+            //map.Layers.Add(hist);
             map.Layers.Add(geo);
             map.Layers.Add(bg);
 
