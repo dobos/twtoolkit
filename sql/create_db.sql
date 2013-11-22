@@ -267,6 +267,7 @@ GO
 
 ----------
 
+/*
 CREATE TABLE [dbo].[user_friend](
 	[run_id] [smallint] NOT NULL,
 	[user_id] [bigint] NOT NULL,
@@ -285,7 +286,7 @@ CREATE TABLE [dbo].[user_friend](
 	) ON [USER]
 ) ON [USER]
 
-GO
+GO*/
 
 ----------
 
@@ -303,9 +304,10 @@ CREATE TABLE [dbo].[user_follower](
 		IGNORE_DUP_KEY = OFF,
 		ALLOW_ROW_LOCKS  = ON,
 		ALLOW_PAGE_LOCKS  = ON,
-		DATA_COMPRESSION = PAGE
-	) ON [USER]
-) ON [USER]
+		DATA_COMPRESSION = PAGE,
+		FILLFACTOR = 80
+	) ON [FOLLOWER]
+) ON [FOLLOWER]
 
 GO
 
