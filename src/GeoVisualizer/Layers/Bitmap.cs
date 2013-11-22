@@ -7,5 +7,8 @@ namespace Elte.GeoVisualizer.Lib
 {
     public class BitmapLayer : Layer
     {
+        public override void OnRender(RenderingContext context, object[] values)
+        {
+        }
     }
 }
