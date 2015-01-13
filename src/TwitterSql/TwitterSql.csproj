@@ -18,6 +18,9 @@
     </ConnectionString>
     <TargetFrameworkProfile />
     <PermissionLevel>3</PermissionLevel>
+    <FileUpgradeFlags>40</FileUpgradeFlags>
+    <UpgradeBackupLocation>C:\Data\dobos\project\twtoolkit\Backup\src\TwitterSql\</UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

@@ -1,12 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterReader", "src\TwitterReader\TwitterReader.csproj", "{DABE305A-4DA7-41B1-9C0B-22CF0AD43B5A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterLib", "src\TwitterLib\TwitterLib.csproj", "{20D015E5-7FDA-4597-84C7-532FD754A62C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterLoader", "src\TwitterLoader\TwitterLoader.csproj", "{40AA8A2F-1F5E-4095-949F-C857E4D6A169}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9BFDC590-2E7A-4A19-9D2B-6675AFA0A0DA}"
 	ProjectSection(SolutionItems) = preProject
 		Scripts\bulkinsert.sql = Scripts\bulkinsert.sql
@@ -39,10 +35,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{9BFD
 		Scripts\merge_user_update.sql = Scripts\merge_user_update.sql
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterSql", "src\TwitterSql\TwitterSql.csproj", "{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterLib.Test", "src\TwitterLib.Test\TwitterLib.Test.csproj", "{928CCCD5-DDE6-4004-B0DC-2C73717500F9}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3FC94D5D-98F8-48A3-AF4E-8B7286F52115}"
 	ProjectSection(SolutionItems) = preProject
 		Local.testsettings = Local.testsettings
@@ -51,12 +43,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		TwitterToolkit.vsmdi = TwitterToolkit.vsmdi
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverlappedIO", "src\OverlappedIO\OverlappedIO.csproj", "{CA22C605-3034-4370-BBEA-668460551284}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{905A415F-A80F-48A4-A52C-EAF8B57E4098}"
 	ProjectSection(SolutionItems) = preProject
 		Config\App.config = Config\App.config
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterReader", "src\TwitterReader\TwitterReader.csproj", "{DABE305A-4DA7-41B1-9C0B-22CF0AD43B5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterLib", "src\TwitterLib\TwitterLib.csproj", "{20D015E5-7FDA-4597-84C7-532FD754A62C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterLoader", "src\TwitterLoader\TwitterLoader.csproj", "{40AA8A2F-1F5E-4095-949F-C857E4D6A169}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TwitterSql", "src\TwitterSql\TwitterSql.sqlproj", "{08296E8B-0B33-4E6E-9533-7AEFF11208EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterLib.Test", "src\TwitterLib.Test\TwitterLib.Test.csproj", "{928CCCD5-DDE6-4004-B0DC-2C73717500F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverlappedIO", "src\OverlappedIO\OverlappedIO.csproj", "{CA22C605-3034-4370-BBEA-668460551284}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterBatchLoader", "src\TwitterBatchLoader\TwitterBatchLoader.csproj", "{BA6AB13B-09A1-45F1-92C5-3D6842DF706B}"
 EndProject
@@ -67,9 +69,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterFFLoader", "src\TwitterFFLoader\TwitterFFLoader.csproj", "{6A228219-9678-4A82-8E10-3EEADF2BFA23}"
 EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = TwitterToolkit.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -161,27 +160,27 @@ Global
 		{40AA8A2F-1F5E-4095-949F-C857E4D6A169}.Release|x64.Build.0 = Release|x64
 		{40AA8A2F-1F5E-4095-949F-C857E4D6A169}.Release|x86.ActiveCfg = Release|x86
 		{40AA8A2F-1F5E-4095-949F-C857E4D6A169}.Release|x86.Build.0 = Release|x86
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Development|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Development|Any CPU.Build.0 = Debug|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Development|Any CPU.Deploy.0 = Debug|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Development|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Development|Mixed Platforms.Build.0 = Debug|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Development|Mixed Platforms.Deploy.0 = Debug|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Development|Win32.ActiveCfg = Debug|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Development|x64.ActiveCfg = Debug|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Development|x86.ActiveCfg = Debug|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Release|Win32.ActiveCfg = Release|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Release|x64.ActiveCfg = Release|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Release|x64.Build.0 = Release|Any CPU
-		{F8B7E11F-718F-46BB-A6A9-75BBBF535C39}.Release|x86.ActiveCfg = Release|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Development|Any CPU.Deploy.0 = Debug|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Development|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Development|Mixed Platforms.Build.0 = Debug|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Development|Mixed Platforms.Deploy.0 = Debug|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Development|Win32.ActiveCfg = Debug|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Development|x64.ActiveCfg = Debug|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Development|x86.ActiveCfg = Debug|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Release|Win32.ActiveCfg = Release|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Release|x64.ActiveCfg = Release|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Release|x64.Build.0 = Release|Any CPU
+		{08296E8B-0B33-4E6E-9533-7AEFF11208EE}.Release|x86.ActiveCfg = Release|Any CPU
 		{928CCCD5-DDE6-4004-B0DC-2C73717500F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{928CCCD5-DDE6-4004-B0DC-2C73717500F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{928CCCD5-DDE6-4004-B0DC-2C73717500F9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -321,5 +320,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = TwitterToolkit.vsmdi
 	EndGlobalSection
 EndGlobal
