@@ -10,6 +10,8 @@
     <PostConversionAddToScc>
     </PostConversionAddToScc>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <Recovery>SIMPLE</Recovery>
+    <Trustworthy>True</Trustworthy>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -30,7 +32,7 @@
     <OldToolsVersion>4.0</OldToolsVersion>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
     <Name>TwitterSql</Name>
-    <ProjectVersion>4.0</ProjectVersion>
+    <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{08296e8b-0b33-4e6e-9533-7aeff11208ee}</ProjectGuid>
     <IncludeSchemaNameInFileName>False</IncludeSchemaNameInFileName>
     <GenerateDatabaseFile>False</GenerateDatabaseFile>
@@ -69,7 +71,8 @@
   <PropertyGroup>
     <RootNamespace>TwitterSql</RootNamespace>
   </PropertyGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" Condition="'$(SQLDBExtensionsRefPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" Condition="'$(SQLDBExtensionsRefPath)' == ''" />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
