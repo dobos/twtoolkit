@@ -41,21 +41,21 @@ namespace TwitterLib
             this.stallWarnings = true;
         }
 
-        protected void AppendStreamingParameters(ref Uri url)
+        protected override void GetQueryParameters(Dictionary<string, string> parameters)
         {
             if (count > 0)
             {
-                AppendUrlParameter(ref url, "count", count.ToString());
+                parameters.Add("count", count.ToString());
             }
 
             if (delimited)
             {
-                AppendUrlParameter(ref url, "delimited", "length");
+                parameters.Add("delimited", "length");
             }
 
             if (stallWarnings)
             {
-                AppendUrlParameter(ref url, "stall_warnings", "true");
+                parameters.Add("stall_warnings", "true");
             }
         }
     }

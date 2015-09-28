@@ -7,9 +7,9 @@ namespace TwitterLib.Methods
 {
     public class World : Filter
     {
-        protected override string GetPostData()
+        protected override void GetPostData(Dictionary<string, string> parameters)
         {
-            return "locations=-180,0,0,90,0,0,180,90,-180,-90,0,0,0,-90,180,0";
+            parameters.Add("locations", "-180,0,0,90,0,0,180,90,-180,-90,0,0,0,-90,180,0");
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using System.IO;
-using TwitterLib;
+using System.Configuration;
 
 namespace TwitterLib
 {
@@ -162,7 +162,7 @@ namespace TwitterLib
                 else if (method is TwitterCursoredMethodBase)
                 {
                 }
-                
+
                 this.request = method.GetHttpWebRequest();
                 Console.Error.WriteLine("Connecting to: {0}", request.Address.ToString());
 

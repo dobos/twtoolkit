@@ -153,7 +153,7 @@ namespace TwitterLib
 
             // Get time stamp
             DateTime now;
-            
+
             if (useSystemTime)
             {
                 now = DateTime.Now;

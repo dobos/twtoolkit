@@ -40,28 +40,22 @@ namespace TwitterLib.Methods
             return "GET";
         }
 
-        protected override Uri GetUrl()
+        protected override string GetPath()
         {
-            var url = new Uri("https://api.twitter.com/1.1/followers/ids.json ");
+            return "https://api.twitter.com/1.1/followers/ids.json";
+        }
 
-            AppendCursoredParameters(ref url);
-
+        protected override void GetQueryParameters(Dictionary<string, string> parameters)
+        {
             if (userId > 0)
             {
-                AppendUrlParameter(ref url, "user_id", userId.ToString());
+                parameters.Add("user_id", userId.ToString());
             }
 
             if (screenName != null)
             {
-                AppendUrlParameter(ref url, "screen_name", screenName);
+                parameters.Add("screen_name", screenName);
             }
-
-            return url;
-        }
-
-        protected override string GetPostData()
-        {
-            return null;
         }
     }
 }

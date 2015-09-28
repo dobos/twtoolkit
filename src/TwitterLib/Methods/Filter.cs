@@ -18,12 +18,9 @@ namespace TwitterLib.Methods
             return "POST";
         }
 
-        protected override Uri GetUrl()
+        protected override string GetPath()
         {
-            var url = new Uri("https://stream.twitter.com/1/statuses/filter.json");
-            AppendStreamingParameters(ref url);
-
-            return url;
+            return "https://stream.twitter.com/1.1/statuses/filter.json";
         }
     }
 }

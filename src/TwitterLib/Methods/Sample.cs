@@ -8,12 +8,9 @@ namespace TwitterLib.Methods
 {
     public class Sample : TwitterStreamingMethodBase
     {
-        protected override Uri GetUrl()
+        protected override string GetPath()
         {
-            var url = new Uri("https://stream.twitter.com/1/statuses/sample.json");
-            AppendStreamingParameters(ref url);
-
-            return url;
+            return "https://stream.twitter.com/1.1/statuses/sample.json";
         }
     }
 }

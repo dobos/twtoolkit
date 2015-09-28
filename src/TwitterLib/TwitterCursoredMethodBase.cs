@@ -33,19 +33,16 @@ namespace TwitterLib
             this.cursor = -1;
         }
 
-        protected void AppendCursoredParameters(ref Uri url)
+        protected override void GetQueryParameters(Dictionary<string, string> parameters)
         {
-            string pars = String.Empty;
-
             if (count > 0)
             {
-                AppendUrlParameter(ref url, "count", count.ToString());
-                pars += String.Format("&count={0}", count);
+                parameters.Add("count", count.ToString());
             }
 
             if (cursor > 0)
             {
-                AppendUrlParameter(ref url, "cursor", cursor.ToString());
+                parameters.Add("cursor", cursor.ToString());
             }
         }
     }
