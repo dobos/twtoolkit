@@ -135,8 +135,8 @@ namespace TwitterBatchLoader.Verbs
 
                 b.RunID = RunID;
 
-                b.SourcePath = Path.GetDirectoryName(Source);
-                b.BulkPath = BulkPath;
+                b.SourcePath = Path.GetFullPath(Path.GetDirectoryName(Source));
+                b.BulkPath = Path.GetFullPath(BulkPath);
 
                 b.TargetDB.DataSource = Server;
                 b.TargetDB.InitialCatalog = TargetDB;
