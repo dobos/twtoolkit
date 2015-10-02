@@ -281,8 +281,6 @@ namespace TwitterLib.Load
             {
                 using (var reader = new TwitterStreamReader(filename, overlapped))
                 {
-
-                    //var objects = reader.AsParallel().WithMergeOptions(ParallelMergeOptions.NotBuffered).WithDegreeOfParallelism(Environment.ProcessorCount).Select(
                     var objects = reader.Select(
                         delegate(string status)
                         {
