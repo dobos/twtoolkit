@@ -14,6 +14,7 @@ namespace TwitterBatchLoader
     {
         private int batchID;
         private short runID;
+        private string userName;
         private SqlConnectionStringBuilder targetDB;
         private SqlConnectionStringBuilder loaderDB;
         private string sourcePath;
@@ -32,6 +33,12 @@ namespace TwitterBatchLoader
         {
             get { return runID; }
             set { runID = value; }
+        }
+
+        public string UserName
+        {
+            get { return userName; }
+            set { userName = value; }
         }
 
         public SqlConnectionStringBuilder TargetDB
@@ -76,6 +83,7 @@ namespace TwitterBatchLoader
         {
             this.batchID = 0;
             this.runID = 0;
+            this.userName = Environment.UserName;
             this.targetDB = new SqlConnectionStringBuilder("Data Source=localhost;Initial Catalog=Twitter;Integrated Security=true");
             this.loaderDB = new SqlConnectionStringBuilder("Data Source=localhost;Initial Catalog=TwitterLoader;Integrated Security=true");
             this.sourcePath = null;
@@ -100,8 +108,8 @@ namespace TwitterBatchLoader
         {
             var sql = @"
 INSERT batch
-    (run_id, target_db, loader_db, source_path, bulk_path, binary)
-VALUES (@run_id, @target_db, @loader_db, @source_path, @bulk_path, @binary);
+    (run_id, user_name, target_db, loader_db, source_path, bulk_path, binary)
+VALUES (@run_id, @user_name, @target_db, @loader_db, @source_path, @bulk_path, @binary);
 
 SELECT CAST(@@IDENTITY AS int)";
 
@@ -119,6 +127,7 @@ SELECT CAST(@@IDENTITY AS int)";
             var sql = @"
 UPDATE batch
 SET run_id = @run_id,
+    user_name = @user_name,
     target_db = @target_db,
     loader_db = @loader_db,
     source_path = @source_path,
@@ -138,6 +147,7 @@ WHERE batch_id = @batch_id";
         private void AppendCreateModifyParameters(SqlCommand cmd)
         {
             cmd.Parameters.Add("@run_id", SqlDbType.SmallInt).Value = runID;
+            cmd.Parameters.Add("@user_name", SqlDbType.NVarChar).Value = userName;
             cmd.Parameters.Add("@target_db", SqlDbType.NVarChar).Value = targetDB.ConnectionString;
             cmd.Parameters.Add("@loader_db", SqlDbType.NVarChar).Value = loaderDB.ConnectionString;
             cmd.Parameters.Add("@source_path", SqlDbType.NVarChar).Value = sourcePath;
@@ -166,6 +176,7 @@ WHERE batch_id = @batch_id";
             int o = -1;
             batchID = dr.GetInt32(++o);
             runID = dr.GetInt16(++o);
+            userName = dr.GetString(++o);
             targetDB.ConnectionString = dr.GetString(++o);
             loaderDB.ConnectionString = dr.GetString(++o);
             sourcePath = dr.GetString(++o);
