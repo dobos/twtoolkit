@@ -150,24 +150,23 @@ namespace TwitterLib
 
                     // Twitter uses \r to delimit status messages
                     // If a newline is reached, return it
-                    switch (ch)
+                    if (ch == TwitterFileFormatSettings.LineTerminator)
                     {
-                        case '\r':
-                            string str;
+                        string str;
 
-                            if (builder != null)
-                            {
-                                builder.Append(charBuffer, charPos, pos - charPos);
-                                str = builder.ToString();
-                            }
-                            else
-                            {
-                                str = new string(charBuffer, charPos, pos - charPos);
-                            }
+                        if (builder != null)
+                        {
+                            builder.Append(charBuffer, charPos, pos - charPos);
+                            str = builder.ToString();
+                        }
+                        else
+                        {
+                            str = new string(charBuffer, charPos, pos - charPos);
+                        }
 
-                            // Update buffer position
-                            charPos = pos + 1;
-                            return str;
+                        // Update buffer position
+                        charPos = pos + 1;
+                        return str;
                     }
                     pos++;
                 }

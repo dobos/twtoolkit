@@ -72,8 +72,7 @@
     <Reference Include="SphericalHtm">
       <HintPath>..\..\lib\SphericalHtm.dll</HintPath>
     </Reference>
-    <Reference Include="SphericalLib, Version=1.0.6766.23607, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="SphericalLib">
       <HintPath>..\..\lib\SphericalLib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -167,6 +166,7 @@
     <Compile Include="Methods\World.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TwitterFileConsumer.cs" />
+    <Compile Include="TwitterFileFormatSettings.cs" />
     <Compile Include="TwitterLiveStreamConsumer.cs" />
     <Compile Include="TwitterMethodBase.cs" />
     <Compile Include="TwitterReaderException.cs" />

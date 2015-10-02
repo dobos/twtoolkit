@@ -17,6 +17,7 @@ namespace TwitterBatchLoader.Verbs
         private int threads;
         private bool skip;
         private bool keepFiles;
+        private bool useLF;
 
         private Batch batch;
 
@@ -55,6 +56,13 @@ namespace TwitterBatchLoader.Verbs
             set { keepFiles = value; }
         }
 
+        [Option(Name = "UseLF", Description = "Look for LF instead of CR at end of lines.")]
+        public bool UseLF
+        {
+            get { return useLF; }
+            set { useLF = value; }
+        }
+
         public Start()
         {
             InitializeMembers();
@@ -71,6 +79,12 @@ namespace TwitterBatchLoader.Verbs
 
         public override void Run()
         {
+            // Initialize twitter stream settings
+            if (useLF)
+            {
+                TwitterLib.TwitterFileFormatSettings.LineTerminator = '\n';
+            }
+
             LoadBatch();
 
             var chunks = batch.GetChunksInOrder();
