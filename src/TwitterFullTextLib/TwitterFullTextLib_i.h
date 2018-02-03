@@ -3,11 +3,11 @@
 /* this ALWAYS GENERATED file contains the definitions for the interfaces */
 
 
- /* File created by MIDL compiler version 7.00.0555 */
-/* at Thu Oct 10 17:51:43 2013
+ /* File created by MIDL compiler version 8.00.0603 */
+/* at Fri Oct 30 15:28:55 2015
  */
 /* Compiler settings for TwitterFullTextLib.idl:
-    Oicf, W1, Zp8, env=Win32 (32b run), target_arch=X86 7.00.0555 
+    Oicf, W1, Zp8, env=Win64 (32b run), target_arch=AMD64 8.00.0603 
     protocol : dce , ms_ext, c_ext, robust
     error checks: allocation ref bounds_check enum stub_data 
     VC __declspec() decoration level: 
@@ -48,48 +48,56 @@
 #ifndef __IWordSink_FWD_DEFINED__
 #define __IWordSink_FWD_DEFINED__
 typedef interface IWordSink IWordSink;
+
 #endif 	/* __IWordSink_FWD_DEFINED__ */
 
 
 #ifndef __IPhraseSink_FWD_DEFINED__
 #define __IPhraseSink_FWD_DEFINED__
 typedef interface IPhraseSink IPhraseSink;
+
 #endif 	/* __IPhraseSink_FWD_DEFINED__ */
 
 
 #ifndef __IWordBreaker_FWD_DEFINED__
 #define __IWordBreaker_FWD_DEFINED__
 typedef interface IWordBreaker IWordBreaker;
+
 #endif 	/* __IWordBreaker_FWD_DEFINED__ */
 
 
 #ifndef __IWordFormSink_FWD_DEFINED__
 #define __IWordFormSink_FWD_DEFINED__
 typedef interface IWordFormSink IWordFormSink;
+
 #endif 	/* __IWordFormSink_FWD_DEFINED__ */
 
 
 #ifndef __IStemmer_FWD_DEFINED__
 #define __IStemmer_FWD_DEFINED__
 typedef interface IStemmer IStemmer;
+
 #endif 	/* __IStemmer_FWD_DEFINED__ */
 
 
 #ifndef __ITwitterWordBreaker_FWD_DEFINED__
 #define __ITwitterWordBreaker_FWD_DEFINED__
 typedef interface ITwitterWordBreaker ITwitterWordBreaker;
+
 #endif 	/* __ITwitterWordBreaker_FWD_DEFINED__ */
 
 
 #ifndef __ITwitterStemmer_FWD_DEFINED__
 #define __ITwitterStemmer_FWD_DEFINED__
 typedef interface ITwitterStemmer ITwitterStemmer;
+
 #endif 	/* __ITwitterStemmer_FWD_DEFINED__ */
 
 
 #ifndef __ITwitterFilter_FWD_DEFINED__
 #define __ITwitterFilter_FWD_DEFINED__
 typedef interface ITwitterFilter ITwitterFilter;
+
 #endif 	/* __ITwitterFilter_FWD_DEFINED__ */
 
 
@@ -154,10 +162,11 @@ typedef struct tagTEXT_SOURCE
 
 typedef 
 enum tagWORDREP_BREAK_TYPE
-    {	WORDREP_BREAK_EOW	= 0,
-	WORDREP_BREAK_EOS	= 1,
-	WORDREP_BREAK_EOP	= 2,
-	WORDREP_BREAK_EOC	= 3
+    {
+        WORDREP_BREAK_EOW	= 0,
+        WORDREP_BREAK_EOS	= 1,
+        WORDREP_BREAK_EOP	= 2,
+        WORDREP_BREAK_EOC	= 3
     } 	WORDREP_BREAK_TYPE;
 
 
@@ -201,6 +210,7 @@ EXTERN_C const IID IID_IWordSink;
         
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IWordSinkVtbl
@@ -211,7 +221,7 @@ EXTERN_C const IID IID_IWordSink;
             IWordSink * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            __RPC__deref_out  void **ppvObject);
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IWordSink * This);
@@ -320,6 +330,7 @@ EXTERN_C const IID IID_IPhraseSink;
         
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IPhraseSinkVtbl
@@ -330,7 +341,7 @@ EXTERN_C const IID IID_IPhraseSink;
             IPhraseSink * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            __RPC__deref_out  void **ppvObject);
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IPhraseSink * This);
@@ -430,6 +441,7 @@ EXTERN_C const IID IID_IWordBreaker;
         
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IWordBreakerVtbl
@@ -440,7 +452,7 @@ EXTERN_C const IID IID_IWordBreaker;
             IWordBreaker * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            __RPC__deref_out  void **ppvObject);
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IWordBreaker * This);
@@ -545,6 +557,7 @@ EXTERN_C const IID IID_IWordFormSink;
         
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IWordFormSinkVtbl
@@ -555,7 +568,7 @@ EXTERN_C const IID IID_IWordFormSink;
             IWordFormSink * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            __RPC__deref_out  void **ppvObject);
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IWordFormSink * This);
@@ -642,6 +655,7 @@ EXTERN_C const IID IID_IStemmer;
         
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct IStemmerVtbl
@@ -652,7 +666,7 @@ EXTERN_C const IID IID_IStemmer;
             IStemmer * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            __RPC__deref_out  void **ppvObject);
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             IStemmer * This);
@@ -735,6 +749,7 @@ EXTERN_C const IID IID_ITwitterWordBreaker;
     public:
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct ITwitterWordBreakerVtbl
@@ -745,7 +760,7 @@ EXTERN_C const IID IID_ITwitterWordBreaker;
             ITwitterWordBreaker * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            __RPC__deref_out  void **ppvObject);
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             ITwitterWordBreaker * This);
@@ -773,14 +788,22 @@ EXTERN_C const IID IID_ITwitterWordBreaker;
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             ITwitterWordBreaker * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         END_INTERFACE
     } ITwitterWordBreakerVtbl;
@@ -846,6 +869,7 @@ EXTERN_C const IID IID_ITwitterStemmer;
     public:
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct ITwitterStemmerVtbl
@@ -856,7 +880,7 @@ EXTERN_C const IID IID_ITwitterStemmer;
             ITwitterStemmer * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            __RPC__deref_out  void **ppvObject);
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             ITwitterStemmer * This);
@@ -884,14 +908,22 @@ EXTERN_C const IID IID_ITwitterStemmer;
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             ITwitterStemmer * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         END_INTERFACE
     } ITwitterStemmerVtbl;
@@ -957,6 +989,7 @@ EXTERN_C const IID IID_ITwitterFilter;
     public:
     };
     
+    
 #else 	/* C style interface */
 
     typedef struct ITwitterFilterVtbl
@@ -967,7 +1000,7 @@ EXTERN_C const IID IID_ITwitterFilter;
             ITwitterFilter * This,
             /* [in] */ REFIID riid,
             /* [annotation][iid_is][out] */ 
-            __RPC__deref_out  void **ppvObject);
+            _COM_Outptr_  void **ppvObject);
         
         ULONG ( STDMETHODCALLTYPE *AddRef )( 
             ITwitterFilter * This);
@@ -995,14 +1028,22 @@ EXTERN_C const IID IID_ITwitterFilter;
         
         /* [local] */ HRESULT ( STDMETHODCALLTYPE *Invoke )( 
             ITwitterFilter * This,
-            /* [in] */ DISPID dispIdMember,
-            /* [in] */ REFIID riid,
-            /* [in] */ LCID lcid,
-            /* [in] */ WORD wFlags,
-            /* [out][in] */ DISPPARAMS *pDispParams,
-            /* [out] */ VARIANT *pVarResult,
-            /* [out] */ EXCEPINFO *pExcepInfo,
-            /* [out] */ UINT *puArgErr);
+            /* [annotation][in] */ 
+            _In_  DISPID dispIdMember,
+            /* [annotation][in] */ 
+            _In_  REFIID riid,
+            /* [annotation][in] */ 
+            _In_  LCID lcid,
+            /* [annotation][in] */ 
+            _In_  WORD wFlags,
+            /* [annotation][out][in] */ 
+            _In_  DISPPARAMS *pDispParams,
+            /* [annotation][out] */ 
+            _Out_opt_  VARIANT *pVarResult,
+            /* [annotation][out] */ 
+            _Out_opt_  EXCEPINFO *pExcepInfo,
+            /* [annotation][out] */ 
+            _Out_opt_  UINT *puArgErr);
         
         END_INTERFACE
     } ITwitterFilterVtbl;

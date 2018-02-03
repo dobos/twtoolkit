@@ -9,5 +9,5 @@ CREATE TABLE [tweet_ftidx]
 	[utc_offset] int NULL,
 	[lon] float NULL,
 	[lat] float NULL
-) ON [FTINDEX]
-
+)  ON [FTINDEX]
+WITH (DATA_COMPRESSION = PAGE)
